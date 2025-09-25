@@ -18,7 +18,6 @@ public class principal {
     System.out.println("El resultado es multi: " + resulmulti);
     double resuldiv = (double) numero / numero2;
     System.out.println("El resultado es div: " + resuldiv);
-
     }
 
 }
