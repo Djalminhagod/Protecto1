@@ -23,31 +23,33 @@ public class Salidanoche {
 
         if(edad<18){
             System.out.println("Acceso denegado enor de edad");
-        }else if(edad>=18 && nivelalcol>=1.2){
+        }else if(nivelalcol>=1.2){
             System.out.println("Acceso denegado esceso de alcolemia");
-        }else if(dinero<=0){
-            System.out.println("Acceso denegado no dinero dinero");
+        }else if(dinero>0){
+            System.out.println("Introduce cuanto chupitos vas a beber:");
+            int cantidadchupitos = sc.nextInt();
+            double gastochupitos = dinero-preciochupito*cantidadchupitos;
+            if(gastochupitos<=0){
+                System.out.println("te quedaste sin dinero");
+            }else if(gastochupitos>0){
+                System.out.println("cuantas cañas quieres tomar");
+                int cantidadcana = sc.nextInt();
+                double gastocanas = gastochupitos-preciocana*cantidadcana;
+                if(gastocanas<=0){
+                    System.out.println("te quedaste sin dinero");
+                }else if(gastocanas>0){
+                    System.out.println("Introduce cuanto combinado vas a beber:");
+                    int cantidadcombinado = sc.nextInt();
+                    double gastoscombinados = gastocanas-preciocombinado*cantidadcombinado;
+                    if(gastoscombinados<=0){
+                        System.out.println("te quedaste sin dinero");
+                    }else if(gastoscombinados>0){
+                        System.out.println("me queda "+gastoscombinados);
+                    }
+                }
+            }
+
+
         }
-
-        System.out.println("Introduce cuanto chupitos vas a beber:");
-        int cantidadchupitos = sc.nextInt();
-        double gastochupitos = preciochupito*cantidadchupitos;
-
-        System.out.println("Introduce cuantas cañas vas a beber:");
-        int cantidadcana = sc.nextInt();
-        double gastocanas = preciocana*cantidadcana;
-
-        System.out.println("Introduce cuanto combinado vas a beber:");
-        int cantidadcombinado = sc.nextInt();
-        double gastoscombinados = preciocombinado*cantidadcombinado;
-
-        double gastosnoche = dinero-gastoscombinados-gastochupitos-gastocanas;
-
-        double nivelalcolnoche = 8;
-        if (gastosnoche<=0){
-            System.out.println("El as gastado mas de lo que podias ");
-        }
-
-
     }
 }
