@@ -14,7 +14,7 @@ public class ejercicio7 {
             System.out.println("Aprovado ");
         }else if (nota==6) {
             System.out.println("Bien ");
-        }else if (nota>=7 && nota>9) {
+        }else if (nota>=7 && nota<9) {
             System.out.println("Notable ");
         }else if (nota>=9 && nota<=10) {
             System.out.println("Sobresaliente  ");
